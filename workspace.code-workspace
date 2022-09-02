@@ -1,0 +1,14 @@
+{
+  "folders": [
+    {
+      "name": "@siddthesquid/portfolio",
+      "path": "./app/portfolio"
+    },
+    {
+      "name": "@siddthesquid/lib",
+      "path": "./lib/lib"
+    }
+  ],
+  "settings": {
+  }
+}
