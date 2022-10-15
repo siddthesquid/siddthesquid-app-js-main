@@ -8,8 +8,7 @@
   "scripts": {
     "boot": "pnpm -r install",
     "clean": "nx run-many --target=clean",
-    "clean:wipe": "git clean -dfX",
-    "clean:wipe-check": "git clean -dnfX",
+    "clean:all": "nx run-many --parallel --target=clean:all",
     "dev": "nx run-many --parallel --target=dev",
     "build": "nx run-many --parallel --target=build",
     "test": "nx run-many --parallel --target=test",
@@ -18,7 +17,7 @@
   },
   "devDependencies": {
     "envinfo": "^7.8.1",
-    "lerna": "^5.4.0",
+    "lerna": "6",
     "nx": "14.5.6"
   }
 }

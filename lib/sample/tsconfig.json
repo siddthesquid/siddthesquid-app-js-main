@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    // Module resolution/import rules
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "composite": true,
+
+    // Typescript source code rules
+    "lib": ["es6"],
+    "allowJs": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+
+    // Types of files that are generated
+    "module": "commonjs",
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Mostly non-effectful typescript emit settings
+    "target": "es6",
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": false,
+    "noLib": false
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["dist", "node_modules"]
+}
