@@ -8,8 +8,7 @@ type MyButtonProps = {
   hoverColor: string;
   clickedColor: string;
   onClick: () => void;
-}
-const MyButton = (
+};
 
 const counter: State = { count: 0 };
 const increment = (state: State): State => ({ count: state.count + 1 });
@@ -23,16 +22,27 @@ const MyComponent = () => {
       }}
     >
       <div>
+        <text>{state.count}</text>
+      </div>
+      <div>
+        {" "}
+        <input width="100%" />
+      </div>
+      <div
+        onClick={() => {
+          setState(increment(state));
+        }}
+      >
         {" "}
         <input />
       </div>
       <div>
         {" "}
-        <input />
-      </div>
-      <div>
-        {" "}
-        <button />
+        <button
+          onClick={() => {
+            setState(increment(state));
+          }}
+        />
       </div>
     </div>
   );
