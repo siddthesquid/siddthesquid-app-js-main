@@ -6,14 +6,15 @@
     "lib/*"
   ],
   "scripts": {
-    "boot": "pnpm -r install",
     "prepare": "husky install",
+    "setup": "pnpm -r install",
     "clean": "nx run-many --target=clean",
     "clean:all": "nx run-many --parallel --target=clean:all",
     "dev": "nx run-many --parallel --target=dev",
     "build": "nx run-many --parallel --target=build",
     "test": "nx run-many --parallel --target=test",
     "lint": "nx run-many --parallel --target=lint",
+    "version": "npx lerna version --conventional-commits --amend --yes",
     "publish": "nx run-many --parallel --target=publish"
   },
   "devDependencies": {
