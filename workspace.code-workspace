@@ -7,8 +7,29 @@
     {
       "name": "@siddthesquid/lib",
       "path": "./lib/lib"
+    },
+    {
+      "name": "@siddthesquid/sample",
+      "path": "./lib/sample"
     }
   ],
   "settings": {
+    "files.exclude": {
+      "dist/": true,
+      "build/": true,
+      ".next/": true,
+      "out/": true,
+      "coverage/": true,
+      "tsconfig*.json*": true,
+      ".eslintignore": true,
+      ".eslintrc.json": true,
+      ".prettierrc.json": true,
+      ".prettierignore": true,
+      "next.config.js": true,
+      "jest.config.*": true,
+      "node_modules/": true,
+      "*.tsbuildinfo": true,
+      "next-env.d.ts": true
+    }
   }
 }

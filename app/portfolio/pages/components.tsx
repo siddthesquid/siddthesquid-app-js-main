@@ -21,6 +21,11 @@ const MyComponent = () => {
         setState(increment(state));
       }}
     >
+      <select>
+        <option>a</option>
+        <option>b</option>
+        <option>c</option>
+      </select>
       <div>
         <text>{state.count}</text>
       </div>
