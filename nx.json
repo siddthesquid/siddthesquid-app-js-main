@@ -16,8 +16,8 @@
     "test": {
       "dependsOn": ["build"]
     },
-    "publish": {
-      "dependsOn": ["build", "test", "lint"]
+    "lint": {
+      "dependsOn": ["build"]
     }
   },
   "affected": {

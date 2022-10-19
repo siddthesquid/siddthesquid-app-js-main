@@ -11,11 +11,12 @@
     "clean": "nx run-many --target=clean",
     "clean:all": "nx run-many --parallel --target=clean:all",
     "dev": "nx run-many --parallel --target=dev",
-    "test": "nx affected --parallel=3 --target=test --code-coverage",
-    "lint": "nx affected --parallel=3 --target=lint",
-    "build": "nx affected --parallel=3 --target=build",
-    "version": "npx lerna version --conventional-commits --amend --yes",
-    "publish": "nx run-many --parallel --target=publish"
+    "test": "nx affected --base=main --parallel=3 --target=test",
+    "test:ci": "nx affected --base=main --parallel=3 --target=test --ci --code-coverage",
+    "lint": "nx affected --base=main --parallel=3 --target=lint",
+    "build": "nx affected --base=main --parallel=3 --target=build",
+    "version": "npx lerna version --conventional-commits --yes",
+    "publish": "nx run-many --parallel=3 --target=publish"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
@@ -24,7 +25,7 @@
     "cz-conventional-changelog": "^3.3.0",
     "envinfo": "^7.8.1",
     "husky": "^8.0.1",
-    "lerna": "6",
+    "lerna": "^6.0.1",
     "nx": "15.0.0"
   },
   "config": {
