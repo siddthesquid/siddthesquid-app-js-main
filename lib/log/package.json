@@ -1,5 +1,5 @@
 {
-  "name": "@siddthesquid/sample",
+  "name": "@siddthesquid/log",
   "version": "1.0.7",
   "license": "MIT",
   "main": "index.js",

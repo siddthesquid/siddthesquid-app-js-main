@@ -6,7 +6,7 @@
     "lib/*"
   ],
   "scripts": {
-    "prepare": "husky install",
+    "postinstall": "tsplus-install",
     "setup": "pnpm -r install",
     "clean": "nx run-many --target=clean",
     "clean:all": "nx run-many --parallel --target=clean:all",
@@ -21,16 +21,12 @@
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
-    "commitizen": "^4.2.5",
+    "@tsplus/installer": "^0.0.149",
+    "@types/node": "18.7.2",
     "cz-conventional-changelog": "^3.3.0",
     "envinfo": "^7.8.1",
-    "husky": "^8.0.1",
     "lerna": "^6.0.1",
-    "nx": "15.0.0"
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
+    "nx": "15.0.0",
+    "typescript": "^4.8.4"
   }
 }

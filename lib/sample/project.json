@@ -1,0 +1,15 @@
+{
+  "root": "src",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+      }
+    },
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "options": {
+      }
+    }
+  }
+}

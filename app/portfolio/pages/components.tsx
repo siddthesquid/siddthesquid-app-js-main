@@ -54,3 +54,5 @@ const MyComponent = () => {
 };
 
 export { MyComponent };
+
+const x = (another_variable: number) => "fd";

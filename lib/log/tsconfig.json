@@ -4,17 +4,26 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "composite": true,
+    "moduleDetection": "force",
+    "preserveSymlinks": true,
 
     // Typescript source code rules
-    "lib": ["ES2021"],
+    "lib": ["es6"],
+    "noLib": false,
+    "skipLibCheck": true,
     "allowJs": true,
+    "checkJs": false,
     "strict": true,
     "strictNullChecks": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedParameters": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitThis": true,
+    "forceConsistentCasingInFileNames": true,
 
     // Types of files that are generated
     "module": "commonjs",
@@ -28,7 +37,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "removeComments": false,
-    "noLib": false
+    "stripInternal": true
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["dist", "node_modules"]
