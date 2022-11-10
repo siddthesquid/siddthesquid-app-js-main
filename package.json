@@ -4,21 +4,21 @@
   "scripts": {
     "clean": "nx run-many --target=clean",
     "wipe": "nx run-many --parallel --target=wipe",
-    "generate": "nx affected --base=main --target=generate",
+    "generate": "nx run-many --base=main --target=generate",
     "build": "nx affected --base=main --parallel=3 --target=build",
     "dev": "nx run-many --parallel --target=dev",
     "test": "nx affected --base=main --parallel=3 --target=test",
     "format": "nx affected --base=main --target=format",
     "lint": "nx affected --base=main --parallel=3 --target=lint",
-    "commitlint": "echo \"commitlint here\"",
-    "ci:generate": "nx affected --base=main --target=generate",
+    "docgen": "nx affected --target=docgen",
+    "commitlint": "npx commitlint --from origin/main --to HEAD --verbose",
+    "ci:generate": "nx run-many --base=main --target=generate",
     "ci:build": "nx affected --base=main --parallel=3 --target=build --ci",
     "ci:test": "nx affected --base=main --parallel=3 --target=test --ci --code-coverage",
     "ci:lint": "nx affected --base=main --parallel=3 --target=lint --ci",
-    "ci:commitlint": "echo \"commitlint here\"",
-    "ci:docgen": "nx run-many --target=docgen --ci",
-    "ci:version": "npx lerna version --conventional-commits --yes",
-    "ci:publish": "nx run-many --parallel=3 --target=publish"
+    "ci:commitlint": "npx commitlint --from origin/main --to HEAD --verbose",
+    "ci:version": "nx affected --target version",
+    "ci:publish": "nx affected --target=publish"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",

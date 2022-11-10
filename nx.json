@@ -34,6 +34,18 @@
     },
     "lint": {
       "dependsOn": ["build"]
+    },
+    "ci:build": {
+      "dependsOn": ["ci:generate", "^ci:build"]
+    },
+    "ci:test": {
+      "dependsOn": ["ci:build"]
+    },
+    "ci:lint": {
+      "dependsOn": ["ci:build"]
+    },
+    "ci:publish": {
+      "dependsOn": ["^publish"]
     }
   }
 }

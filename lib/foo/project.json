@@ -1,0 +1,33 @@
+{
+  "sourceRoot": "lib/foo/src",
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*"],
+    "production": [
+      "!{projectRoot}/**/*.test.tsx",
+      "!{projectRoot}/**/*.test.ts",
+      "!{projectRoot}/test/**/"
+    ]
+  },
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "inputs": ["default", "^production"],
+      "outputs": [],
+      "dependsOn": ["build"],
+      "options": {}
+    },
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "inputs": ["production", "^production"],
+      "outputs": ["{workspaceRoot}/dist/libs/mylib"],
+      "dependsOn": ["^build"],
+      "options": {}
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "angular"
+      }
+    }
+  }
+}

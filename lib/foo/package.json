@@ -4,8 +4,9 @@
   "license": "MIT",
   "main": "index.js",
   "types": "index.d.ts",
-  "bin": {
-    "siddthesquid-sample": "./module/main.js"
+  "publishConfig": {
+    "directory": "dist",
+    "linkDirectory": true
   },
   "scripts": {
     "clean": "rimraf dist .tsbuildinfo coverage",
@@ -17,9 +18,17 @@
     "test": "jest",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
     "lint": "eslint src/**",
-    "publish": "npm publish --dry-run"
+    "docgen": "echo \"implement docgen\"",
+    "ci:build": "pnpm run ci:build:ts && pnpm run ci:build:lib",
+    "ci:build:ts": "tsc -p ./tsconfig.build.json",
+    "ci:build:lib": "cp package.json README LICENSE dist",
+    "ci:test": "jest",
+    "ci:lint": "eslint src/**",
+    "ci:publish": "npm publish --dry-run"
   },
   "devDependencies": {
+    "@jscutlery/semver": "^2.27.2",
+    "@nrwl/devkit": "^14.0.0",
     "@swc/core": "^1.2.235",
     "@swc/jest": "^0.2.22",
     "@types/jest": "^28.1.6",
