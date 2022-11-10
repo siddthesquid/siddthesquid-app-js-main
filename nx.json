@@ -5,7 +5,16 @@
     "default": {
       "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test"]
+        "cacheableOperations": [
+          "generate",
+          "build",
+          "test",
+          "lint",
+          "ci:generate",
+          "ci:build",
+          "ci:test",
+          "ci:lint"
+        ]
       }
     }
   },

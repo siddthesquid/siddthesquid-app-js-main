@@ -1,32 +1,30 @@
 {
   "name": "root",
   "private": true,
-  "workspaces": [
-    "app/*",
-    "lib/*"
-  ],
   "scripts": {
-    "postinstall": "tsplus-install",
-    "setup": "pnpm -r install",
     "clean": "nx run-many --target=clean",
-    "clean:all": "nx run-many --parallel --target=clean:all",
+    "wipe": "nx run-many --parallel --target=wipe",
+    "generate": "nx affected --base=main --target=generate",
+    "build": "nx affected --base=main --parallel=3 --target=build",
     "dev": "nx run-many --parallel --target=dev",
     "test": "nx affected --base=main --parallel=3 --target=test",
-    "test:ci": "nx affected --base=main --parallel=3 --target=test --ci --code-coverage",
+    "format": "nx affected --base=main --target=format",
     "lint": "nx affected --base=main --parallel=3 --target=lint",
-    "build": "nx affected --base=main --parallel=3 --target=build",
-    "version": "npx lerna version --conventional-commits --yes",
-    "publish": "nx run-many --parallel=3 --target=publish"
+    "commitlint": "echo \"commitlint here\"",
+    "ci:generate": "nx affected --base=main --target=generate",
+    "ci:build": "nx affected --base=main --parallel=3 --target=build --ci",
+    "ci:test": "nx affected --base=main --parallel=3 --target=test --ci --code-coverage",
+    "ci:lint": "nx affected --base=main --parallel=3 --target=lint --ci",
+    "ci:commitlint": "echo \"commitlint here\"",
+    "ci:docgen": "nx run-many --target=docgen --ci",
+    "ci:version": "npx lerna version --conventional-commits --yes",
+    "ci:publish": "nx run-many --parallel=3 --target=publish"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
-    "@tsplus/installer": "^0.0.149",
-    "@types/node": "18.7.2",
     "cz-conventional-changelog": "^3.3.0",
     "envinfo": "^7.8.1",
-    "lerna": "^6.0.1",
-    "nx": "15.0.0",
-    "typescript": "^4.8.4"
+    "nx": "15.0.7"
   }
 }
