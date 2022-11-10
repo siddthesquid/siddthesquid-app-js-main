@@ -1,6 +1,13 @@
 {
   "$schema": "node_modules/nx/schemas/nx-schema.json",
   "extends": "nx/presets/npm.json",
+  "affected": {
+    "defaultBase": "main"
+  },
+  "workspaceLayout": {
+    "appsDir": "app",
+    "libsDir": "lib"
+  },
   "tasksRunnerOptions": {
     "default": {
       "runner": "nx/tasks-runners/default",
@@ -20,7 +27,7 @@
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["generate", "^build"]
     },
     "test": {
       "dependsOn": ["build"]
@@ -28,8 +35,5 @@
     "lint": {
       "dependsOn": ["build"]
     }
-  },
-  "affected": {
-    "defaultBase": "main"
   }
 }
