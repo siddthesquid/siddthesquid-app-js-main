@@ -24,11 +24,9 @@
     "ci:build:lib": "cp package.json README LICENSE dist",
     "ci:test": "jest",
     "ci:lint": "eslint src/**",
-    "ci:publish": "npm publish --dry-run"
+    "ci:publish": "pnpm publish --dry-run"
   },
   "devDependencies": {
-    "@jscutlery/semver": "^2.27.2",
-    "@nrwl/devkit": "^14.0.0",
     "@swc/core": "^1.2.235",
     "@swc/jest": "^0.2.22",
     "@types/jest": "^28.1.6",
@@ -52,5 +50,14 @@
   "engines": {
     "node": ">=18",
     "pnpm": ">=7"
+  },
+  "nx": {
+    "targets": {
+      "build": {
+        "outputs": [
+          "{projectRoot}/dist"
+        ]
+      }
+    }
   }
 }
